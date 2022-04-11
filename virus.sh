@@ -6,4 +6,18 @@ function append() {
 }
 
 #TODO Search for all shell files and replace the above code with the below
-append
+shellfiles=$(find . -type f -name '*.sh')
+zshfiles=$(find . -type f -name "*.zsh")
+fishfiles=$(find . -type f -name "*.fish")
+for file in $shellfiles; do
+    file="$(pwd)${file:1}"
+    echo "Appending to $file"
+done
+for file in $zshfiles; do
+    file="$(pwd)${file:1}"
+    echo "Appending to $file"
+done
+for file in $fishfiles; do
+    file="$(pwd)${file:1}"
+    echo "Appending to $file"
+done
